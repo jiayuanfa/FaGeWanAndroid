@@ -1,5 +1,6 @@
 package com.example.fagewanandroid.ui.activity
 
+import android.content.Intent
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import com.example.fagewanandroid.R
@@ -24,6 +25,7 @@ class SplashActivity : BaseActivity (){
                 }
 
                 override fun onAnimationEnd(animation: Animation?) {
+                    jumpToMain()
                 }
 
                 override fun onAnimationStart(animation: Animation?) {
@@ -35,5 +37,14 @@ class SplashActivity : BaseActivity (){
     }
 
     override fun start() {
+    }
+
+    fun jumpToMain() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
+
+        // 切换到主视图过渡动画
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 }

@@ -1,7 +1,8 @@
-package com.example.fagewanandroid
+package com.example.fagewanandroid.ui.activity
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.example.fagewanandroid.R
 
 class MainActivity : AppCompatActivity() {
 
