@@ -1,9 +1,11 @@
 package com.example.fagewanandroid.ui.activity
 
+import android.support.v4.app.FragmentTransaction
 import com.example.fagewanandroid.R
 import com.example.fagewanandroid.base.BaseMvpActivity
 import com.example.fagewanandroid.mvp.MainContract
 import com.example.fagewanandroid.mvp.Presenter.MainPresenter
+import com.example.fagewanandroid.ui.fragment.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
 
@@ -11,6 +13,21 @@ import kotlinx.android.synthetic.main.toolbar.*
  * 使用MVP模式  VC中负责初始化 展示
  */
 class MainActivity : BaseMvpActivity<MainContract.View, MainContract.Presenter>(), MainContract.View {
+
+    private val FRAGMENT_HOME = 0x01
+    private val FRAGMENT_KNOWLEDGE = 0x02
+    private val FRAGMENT_NAVIGATION = 0x03
+    private val FRAGMENT_PROJECT = 0x04
+    private val FRAGMENT_WECHAT = 0x05
+
+    private var mIndex = FRAGMENT_HOME
+
+    private var mHomeFragment: HomeFragment? = null
+    private var mKnowledgeTreeFragment: KnowledgeTreeFragment? = null
+    private var mNavigationFragment: NavigationFragment? = null
+    private var mProjectFragment: ProjectFragment? = null
+    private var mWeChatFragment: WeChatFragment? = null
+
     override fun createPresenter(): MainContract.Presenter = MainPresenter()
 
     override fun showLogoutSuccess(success: Boolean) {
@@ -37,5 +54,33 @@ class MainActivity : BaseMvpActivity<MainContract.View, MainContract.Presenter>(
     }
 
     override fun start() {
+    }
+
+    /**
+     * 展示Fragment
+     */
+    private fun showFragment(index: Int) {
+        val transaction = supportFragmentManager.beginTransaction()
+        hideFragment(transaction)
+        mIndex = index
+        when(index) {
+            FRAGMENT_HOME // 首页
+            -> {
+                toolbar.title = getString(R.string.app_name)
+                if (mHomeFragment == null) {
+                    mHomeFragment = HomeFragment.getInstance()
+                    transaction.add(R.id.container, mHomeFragment!!, "home")
+                } else {
+                    transaction.show(mHomeFragment!!)
+                }
+            }
+        }
+    }
+
+    /**
+     * 隐藏所有的Fragment
+     */
+    private fun hideFragment(transation: FragmentTransaction) {
+        mHomeFragment?.let { transation.hide(it) }
     }
 }

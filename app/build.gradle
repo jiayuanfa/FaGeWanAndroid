@@ -44,4 +44,7 @@ dependencies {
     implementation rootProject.ext.networkLibs
     // 公共库
     implementation rootProject.ext.commonLibs
+
+    // 依赖本地库
+    implementation project(':multiple-status-view')
 }
