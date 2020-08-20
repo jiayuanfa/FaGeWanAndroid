@@ -18,6 +18,7 @@
 
     <!--注意 application使用的主题是AppTheme 全局的去掉ActionBar 即可-->
     <application
+            android:name=".app.App"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"

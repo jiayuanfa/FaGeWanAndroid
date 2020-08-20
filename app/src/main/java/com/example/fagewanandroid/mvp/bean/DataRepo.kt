@@ -1,6 +1,5 @@
 package com.example.fagewanandroid.mvp.bean
 
-import android.nfc.Tag
 import com.squareup.moshi.Json
 
 data class HttpResult<T>(
@@ -56,4 +55,9 @@ data class Article(
     @Json(name = "visible") val visible: Int,
     @Json(name = "zan") val zan: Int,
     @Json(name = "top") var top: String
+)
+
+data class Tag(
+    @Json(name = "name") val name: String,
+    @Json(name = "url") val url: String
 )

@@ -51,6 +51,8 @@ class MainActivity : BaseMvpActivity<MainContract.View, MainContract.Presenter>(
             // BottomNavigationViewHelper.disableShiftMode(this)
             labelVisibilityMode = 1
         }
+
+        showFragment(mIndex)
     }
 
     override fun start() {
@@ -75,6 +77,7 @@ class MainActivity : BaseMvpActivity<MainContract.View, MainContract.Presenter>(
                 }
             }
         }
+        transaction.commit()
     }
 
     /**
