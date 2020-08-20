@@ -25,12 +25,21 @@ import io.reactivex.Observable
 import kotlinx.android.synthetic.main.fragment_refresh_layout.*
 import kotlinx.android.synthetic.main.item_home_banner.view.*
 
+/**
+ * Home页面
+ */
 class HomeFragment : BaseMvpFragment<HomeContract.View, HomeContract.Presenter>(), HomeContract.View {
 
+    /**
+     * 单例
+     */
     companion object {
         fun getInstance(): HomeFragment = HomeFragment()
     }
 
+    /**
+     * 设置Presenter
+     */
     override fun createPresenter(): HomeContract.Presenter = HomePresenter()
 
     /**

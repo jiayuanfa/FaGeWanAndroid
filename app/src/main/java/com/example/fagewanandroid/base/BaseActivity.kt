@@ -37,38 +37,13 @@ abstract class BaseActivity : AppCompatActivity() {
         start()
     }
 
-    override fun onResume() {
-        super.onResume()
-    }
-
-    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
-        return super.dispatchTouchEvent(ev)
-    }
-
-    override fun onPause() {
-        super.onPause()
-    }
-
-    override fun onStop() {
-        super.onStop()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-    }
-
-    override fun finish() {
-        super.finish()
-    }
-
+    /**
+     * 隐藏底部菜单栏
+     */
     @SuppressLint("ObsoleteSdkInt")
     private fun hideBottomUIMenu() {
         val v = window.decorView
-        if (Build.VERSION.SDK_INT > 11 && Build.VERSION.SDK_INT < 19) {
+        if (Build.VERSION.SDK_INT in 12..18) {
             v.systemUiVisibility = View.GONE
         } else if (Build.VERSION.SDK_INT >= 19) {
             val uiOptions = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
