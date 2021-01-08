@@ -1,10 +1,10 @@
 package com.example.fagewanandroid.ui.fragment
 
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.widget.ImageView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import cn.bingoogolapple.bgabanner.BGABanner
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.example.fagewanandroid.R
@@ -24,6 +24,7 @@ import com.example.fagewanandroid.widget.SpaceItemDecoration
 import io.reactivex.Observable
 import kotlinx.android.synthetic.main.fragment_refresh_layout.*
 import kotlinx.android.synthetic.main.item_home_banner.view.*
+import org.jetbrains.anko.db.DEFAULT
 
 /**
  * Home页面
@@ -189,8 +190,6 @@ class HomeFragment : BaseMvpFragment<HomeContract.View, HomeContract.Presenter>(
         recycleView.run {
             layoutManager = linearLayoutManager
             adapter = homeAdapter
-            itemAnimator = DefaultItemAnimator()
-            recyclerViewItemDecoration?.let { addItemDecoration(it) }
         }
         bannerView = layoutInflater.inflate(R.layout.item_home_banner, null)
         bannerView?.banner?.run {

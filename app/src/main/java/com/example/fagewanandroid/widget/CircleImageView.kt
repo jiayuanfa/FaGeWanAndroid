@@ -6,12 +6,13 @@ import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
+import androidx.appcompat.widget.AppCompatImageView
 import com.example.fagewanandroid.R
 
 /**
  * Created by chenxz on 2018/4/22.
  */
-class CircleImageView(context: Context, attrs: AttributeSet) : android.support.v7.widget.AppCompatImageView(context, attrs) {
+class CircleImageView(context: Context, attrs: AttributeSet) : AppCompatImageView(context, attrs) {
 
     private val mType: Int
     private val mBorderColor: Int

@@ -2,16 +2,16 @@ package com.example.fagewanandroid.ext
 
 import android.app.Activity
 import android.content.Context
-import android.support.design.widget.Snackbar
-import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
 import android.util.Log
 import android.widget.TextView
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import java.text.SimpleDateFormat
 import java.util.*
 
 import com.example.fagewanandroid.R
 import com.example.fagewanandroid.widget.CustomToast
+import com.google.android.material.snackbar.Snackbar
 
 /**
  * Created by chenxz on 2018/4/22.

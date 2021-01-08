@@ -4,9 +4,9 @@ import android.app.Activity
 import android.app.Application
 import android.content.Context
 import android.os.Bundle
-import android.support.multidex.MultiDexApplication
-import android.support.v7.app.AppCompatDelegate
 import android.util.Log
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.multidex.MultiDexApplication
 import com.example.fagewanandroid.BuildConfig
 import com.example.fagewanandroid.R
 import com.example.fagewanandroid.constant.Constant

@@ -3,8 +3,8 @@ package com.example.fagewanandroid.base
 import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.*
+import androidx.appcompat.app.AppCompatActivity
 
 abstract class BaseActivity : AppCompatActivity() {
 
